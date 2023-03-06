@@ -1,6 +1,8 @@
 # IoT-database-2023
 IoT 개발자 과정 데이터베이스 - MySQL
 
+![Mysql](https://github.com/limchaeyeon8/IoT-database-2023/tree/main/Images/sql.png)
+
 # 1일차
 1. MySQL 학습
     - 데이터베이스 개요
