@@ -28,12 +28,12 @@ SELECT REPLACE(b.Author, ',', '/') AS '저자명'
 SELECT DATE_FORMAT('2023-03-03 17:15:10', '%Y년 %m월 %d일 %p %H시%i분%s초 ') AS '일시';
   
 -- 회원을 봅시다
-SELECT m.Names AS '이름'
+SELECT CONCAT(SUBSTRING_INDEX(m.Names, 1),
+			 ',',
+			 LOWER(m.Names, -2)) AS '이름'
 	 , m.Levels AS '등급'
      , m.Addr AS '주소'
      , m.Mobile AS '연락처'
-     , CONCAT(UPPER(SUBSTRING_INDEX(m.Email, '@', 1)),
-			 '@',
-			 LOWER(SUBSTRING_INDEX(m.Email, '@', -1))) AS '이메일주소'
+	
   FROM membertbl AS m
  ORDER BY m.Names ASC;	-- 이름 오름차순 정렬
